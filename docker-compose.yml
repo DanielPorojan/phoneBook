@@ -1,0 +1,13 @@
+version: '2.2'
+
+services:
+  mssql:
+    image: 'mcr.microsoft.com/mssql/server:2019-latest'
+    user: root
+    ports:
+      - '1433:1433'
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Secret1234
+    volumes:
+      - './drive:/var/opt/mssql'
